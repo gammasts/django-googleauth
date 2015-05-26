@@ -42,6 +42,7 @@ Okay, now let's assume you are using HTTP and have mounted the googleauth URL co
 
     http://<your-domain>/accounts/callback/
 
+By default the domain and protocol will be used from the original request, but you can override this with GOOGLEAUTH_CALLBACK_DOMAIN and GOOGLEAUTH_USE_HTTPS
 
 Django Setup
 ============
@@ -74,12 +75,10 @@ Required settings::
     # client secret from the Google Developer Console
     GOOGLEAUTH_CLIENT_SECRET = ''
 
-    # your app's domain, used to construct callback URLs
-    GOOGLEAUTH_CALLBACK_DOMAIN = ''
-
-
-
 Optional settings::
+
+    # alternate callback domain, used to construct callback URLs
+    GOOGLEAUTH_CALLBACK_DOMAIN = ''
 
     # callback URL uses HTTPS (your side, not Google), default True
     GOOGLEAUTH_USE_HTTPS = True
